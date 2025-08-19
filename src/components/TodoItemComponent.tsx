@@ -48,12 +48,16 @@ const TodoItemComponent: React.FC<TodoItemComponentProps> = ({
   };
 
   return (
-    <View style={[
-      styles.container, 
-      { backgroundColor: theme.colors.surface, borderColor: theme.colors.border },
-      todo.completed && styles.completed
-    ]}>
+    <View 
+      testID="todo-item"
+      style={[
+        styles.container, 
+        { backgroundColor: theme.colors.surface, borderColor: theme.colors.border },
+        todo.completed && styles.completed
+      ]}
+    >
       <TouchableOpacity
+        testID="checkbox"
         style={styles.toggleButton}
         onPress={() => onToggle(todo.id)}
       >
@@ -67,15 +71,19 @@ const TodoItemComponent: React.FC<TodoItemComponentProps> = ({
       </TouchableOpacity>
 
       <TouchableOpacity
+        testID="content"
         style={styles.content}
         onPress={() => onEdit?.(todo)}
         disabled={!onEdit}
       >
-        <Text style={[
-          styles.title, 
-          { color: theme.colors.text },
-          todo.completed && [styles.completedText, { color: theme.colors.textSecondary }]
-        ]}>
+        <Text 
+          testID="todo-title"
+          style={[
+            styles.title, 
+            { color: theme.colors.text },
+            todo.completed && [styles.completedText, { color: theme.colors.textSecondary }]
+          ]}
+        >
           {todo.title}
         </Text>
         {todo.description && (
@@ -89,6 +97,7 @@ const TodoItemComponent: React.FC<TodoItemComponentProps> = ({
         )}
         <View style={styles.meta}>
           <View
+            testID="priority-badge"
             style={[
               styles.priorityBadge,
               { backgroundColor: getPriorityColor(todo.priority) },
@@ -104,6 +113,7 @@ const TodoItemComponent: React.FC<TodoItemComponentProps> = ({
 
       {onEdit && (
         <TouchableOpacity 
+          testID="edit-button"
           style={styles.editButton} 
           onPress={() => onEdit(todo)}
         >
@@ -112,6 +122,7 @@ const TodoItemComponent: React.FC<TodoItemComponentProps> = ({
       )}
 
       <TouchableOpacity 
+        testID="delete-button"
         style={[styles.deleteButton, { backgroundColor: theme.colors.error }]} 
         onPress={handleDelete}
       >
