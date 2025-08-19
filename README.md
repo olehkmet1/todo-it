@@ -14,7 +14,6 @@ A beautiful and feature-rich todo application built with React Native and TypeSc
 - 🎨 **Beautiful design** with shadows and modern styling
 - ⚡ **TypeScript** for better development experience
 
-## Screenshots
 
 The app features a clean, modern interface with:
 - Header showing completion progress
@@ -23,21 +22,6 @@ The app features a clean, modern interface with:
 - Add todo modal with form validation
 - Empty states with helpful messages
 
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── TodoItemComponent.tsx    # Individual todo item
-│   ├── TodoListComponent.tsx    # Todo list with filters
-│   ├── AddTodoComponent.tsx     # Add todo modal
-│   └── EditTodoComponent.tsx    # Edit todo modal
-├── interfaces/
-│   └── Todo.ts                  # TypeScript interfaces
-├── services/
-│   └── TodoService.ts           # Data management service
-└── utils/                       # Utility functions (future use)
-```
 
 ## Getting Started
 
@@ -83,7 +67,7 @@ npm run ios
 npm start
 ```
 
-## Usage
+
 
 ### Adding a Todo
 1. Tap the "+" button in the header
@@ -145,28 +129,6 @@ npm start
 
 ### Data Persistence
 Todos are stored locally using AsyncStorage and persist between app sessions.
-
-## Development
-
-### Code Style
-- TypeScript for type safety
-- Component-based architecture
-- Consistent naming conventions
-- Modern React patterns (hooks, functional components)
-
-### Adding New Features
-1. Define interfaces in `src/interfaces/`
-2. Add business logic in `src/services/`
-3. Create UI components in `src/components/`
-4. Update the main App component
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
 
 ## License
 
